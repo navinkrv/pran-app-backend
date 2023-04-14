@@ -1,8 +1,8 @@
 module.exports={
-    HOST:"localhost",
-    USER:"root",
-    PASSWORD:"",
-    DB:"prandb",
+    HOST:"198.251.89.164",
+    USER:"dzyissjs_pranapi",
+    PASSWORD:"Pran@official",
+    DB:"dzyissjs_pranapi",
     dialect:"mysql",
     
     pool:{
