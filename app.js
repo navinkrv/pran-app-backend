@@ -33,6 +33,6 @@ app.get('/', (req,res)=>{
 
 //server
 
-app.listen(5000 , ()=>{
+app.listen(process.env.port , ()=>{
     console.log("Server is running");
 })
