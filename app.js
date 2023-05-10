@@ -29,7 +29,7 @@ app.use("/api/txn",transactionRouter)
 //test api
 
 app.get('/', (req,res)=>{
-    res.send("API RUNNING ")
+    res.send("API RUNNING now ")
 
 })
 
