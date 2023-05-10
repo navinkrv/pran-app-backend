@@ -29,13 +29,13 @@ app.use("/api/txn",transactionRouter)
 //test api
 
 app.get('/', (req,res)=>{
-    res.send("API RUNNING now ")
+    res.send("API RUNNING now at "+process.env.PORT)
 
 })
 
 
 //server
 
-app.listen(5000 , ()=>{
-    console.log("Server is running");
+app.listen(process.env.PORT , ()=>{
+    console.log("Server is running at "+process.env.PORT);
 })
