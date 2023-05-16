@@ -10,14 +10,14 @@ const auth=(req,res,next)=>{
             const auth_token= req.headers.authorization.split(" ")[1]
             
             if(!auth_token){
-                res.status(200).send({msg:"Unauthorised Access!"})
+                res.status(200).send({msg:"Unauthorised Access! Token not found"})
             }
 
             const username = jwt.verify(auth_token,SECRET_KEY).username
             const existingUser= User.findOne({where:{username:username}})
 
             if(!existingUser){
-                res.status(200).send({msg:"Unauthorised Access!"+auth_token})
+                res.status(200).send({msg:"Unauthorised Access! user not matched"})
                 }
             req.username=username
 
@@ -26,7 +26,7 @@ const auth=(req,res,next)=>{
     }
     catch(err){
         console.log(err);
-        res.status(200).send({msg:"Unauthorised Access!"})
+        res.status(200).send({msg:"Unauthorised Access! some thing went wrong"})
     }
     
 }

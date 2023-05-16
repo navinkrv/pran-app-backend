@@ -21,20 +21,31 @@ const getCourseList=async(req,res)=>{
  })
  courses=courses.filter((item,
     index) => courses.indexOf(item) === index);
+   if(courses){
 
- res.status(200).send(courses)
+      res.status(200).send(courses)
+   }
+   else{
+      res.status(200).send({msg:"something Went wrong !"})
+         }
 }
 
+// 3. get sem list
 const getSemList=async(req,res)=>{
-    let sem=await Course.findAll({where:{course:req.body.course}})
+    let sem=await Course.findAll({where:{course:req.params.course}})
    
     sem= sem.map((item)=>{
        return item.sem
     })
     sem=sem.filter((item,
        index) => sem.indexOf(item) === index);
-   
-    res.status(200).send(sem)
+   if(sem){
+
+      res.status(200).send(sem)
+   }
+   else{
+      res.status(200).send({msg:"SomeThing went wrong!"})
+   }
    }
    
 
